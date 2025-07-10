@@ -1,0 +1,92 @@
+🚦 IDD_Detection - Step-by-Step Guide to Train YOLOv8 Model
+
+Follow the steps below to train the YOLOv8 object detection model on the IDD dataset.
+
+├── Annotations
+│   ├── frontFar
+│   ├── frontNear
+│   ├── highquality_16k
+│   ├── rearFar
+│   ├── rearNear
+│   ├── sideLeft
+│   └── sideRight
+├── check-dataset.py
+├── IDD_Detection_Step_by.txt
+├── JPEGImages
+│   ├── frontFar
+│   ├── frontNear
+│   ├── highquality_16k
+│   ├── rearNear
+│   ├── sideLeft
+│   └── sideRight
+├── requirements.txt
+├── test.txt
+├── train.py
+├── train.txt
+├── val.txt
+└── voc2yolo_converter.py
+
+
+
+The above is the file structure format of my files
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 STEP 1: Setup Python Environment
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1.1 Create a virtual environment:
+    python -m venv venv
+    source venv/bin/activate  
+
+1.2 Install all required packages:
+    pip install -r requirements.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 STEP 2: Convert VOC Dataset to YOLO Format
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2.1 Make sure your folders look like this:
+    - Annotations/     → contains XML files
+    - JPEGImages/      → contains .jpg image files
+    - train.txt / val.txt / test.txt → contain image names without extension
+
+2.2 Run the conversion script:
+    python voc2yolo_converter.py
+
+2.3 This creates:
+    - YOLOv8_dataset/images/train, val, test
+    - YOLOv8_dataset/labels/train, val, test
+    - YOLOv8_dataset/data.yaml
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 STEP 3: (Optional) Check Dataset Classes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 Run the class checker to view unique classes:
+    python check-dataset.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 STEP 4: Start Training the YOLOv8 Model
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4.1 Run the training script:
+    python train.py
+
+4.2 The training uses:
+    - Pretrained model: yolov8x.pt
+    - Epochs: 50
+    - Image size: 416x416
+    - Batch size: 2
+    - Output folder: runs/train/idd_yolov8_model/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 STEP 5: Check Training Results
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 After training completes:
+
+    - Best model will be saved as: runs/detect/train/weights/best.pt
+

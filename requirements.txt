@@ -1,0 +1,9 @@
+
+```text
+ultralytics>=8.0.0
+tqdm
+numpy
+opencv-python
+torch>=1.13
+pyyaml
+
