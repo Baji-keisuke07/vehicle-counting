@@ -1,4 +1,4 @@
-🚦 IDD_Detection - Step-by-Step Guide to Train YOLOv8 Model
+ IDD_Detection - Step-by-Step Guide to Train YOLOv8 Model
 
 Follow the steps below to train the YOLOv8 object detection model on the IDD dataset.
 
@@ -34,7 +34,7 @@ The above is the file structure format of my files
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔧 STEP 1: Setup Python Environment
+ STEP 1: Setup Python Environment
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1.1 Create a virtual environment:
@@ -45,7 +45,7 @@ The above is the file structure format of my files
     pip install -r requirements.txt
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📦 STEP 2: Convert VOC Dataset to YOLO Format
+ STEP 2: Convert VOC Dataset to YOLO Format
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 2.1 Make sure your folders look like this:
@@ -62,14 +62,14 @@ The above is the file structure format of my files
     - YOLOv8_dataset/data.yaml
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔍 STEP 3: (Optional) Check Dataset Classes
+ STEP 3: (Optional) Check Dataset Classes
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 3.1 Run the class checker to view unique classes:
     python check-dataset.py
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 STEP 4: Start Training the YOLOv8 Model
+ STEP 4: Start Training the YOLOv8 Model
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 4.1 Run the training script:
@@ -83,7 +83,7 @@ The above is the file structure format of my files
     - Output folder: runs/train/idd_yolov8_model/
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 STEP 5: Check Training Results
+ STEP 5: Check Training Results
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 5.1 After training completes:
